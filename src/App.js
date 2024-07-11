@@ -9,18 +9,21 @@ import { heroes, units } from './factions/gloomspite';
 const App = () => {
   const [selectedUnits, setSelectedUnits] = useState([]);
   const [totalPoints, setTotalPoints] = useState(0);
+  const [modelCount, setModelCount] = useState(0); // New state for model count
   const [displayUnit, setDisplayUnit] = useState(null);
 
   const handleAddUnit = (unit, event) => {
     event.stopPropagation();
     setSelectedUnits([...selectedUnits, unit]);
     setTotalPoints(totalPoints + unit.points);
+    setModelCount(modelCount + unit.unit_size); // Update model count
   };
 
   const handleRemoveUnit = (index) => {
     const removedUnit = selectedUnits.splice(index, 1);
     setSelectedUnits([...selectedUnits]);
     setTotalPoints(totalPoints - removedUnit[0].points);
+    setModelCount(modelCount - removedUnit[0].unit_size); // Update model count
   };
 
   const handleDragEnd = (result) => {
@@ -72,7 +75,7 @@ const App = () => {
           )}
         </div>
         <div className="column">
-          <h2>Army List (Total Points: {totalPoints})</h2>
+          <h2>Army List (Total Points: {totalPoints}, Model Count: {modelCount})</h2>
           <DragDropContext onDragEnd={handleDragEnd}>
             <Droppable droppableId="selectedUnits">
               {(provided) => (
