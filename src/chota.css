@@ -501,7 +501,6 @@ input[type="submit"] {
     background-color: transparent; /* 1 */
     color: var(--fg); /* 1 */
     padding: 10px; /* 2 */
-    margin-top: 1.6rem; /* 3 */
     border: 1px solid var(--fg); /* 4 */
     cursor: pointer; /* 5 */
 }
