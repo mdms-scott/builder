@@ -6,7 +6,8 @@ const heroes = [
         regiment_options: "0-1 Skyvessel, Any Infantry",
         notes: "This Hero can join an eligible regiment as a Guild Officer",
         base_size: "32mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/dwarves/aetherKhemist.jpg"
     },
     {
         name: "Aetheric Navigator",
@@ -15,7 +16,8 @@ const heroes = [
         regiment_options: "0-1 Skyvessel, Any Infantry",
         notes: "This Hero can join an eligible regiment as a Guild Officer",
         base_size: "32mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/dwarves/aethericNavigator.jpg"
     },
     {
         name: "Arkanaut Admiral",
@@ -23,7 +25,8 @@ const heroes = [
         points: 180,
         regiment_options: "0-1 Guild Officer, Any Kharadron Overlords",
         base_size: "32mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/dwarves/arkanautAdmiral.jpg"
     },
     {
         name: "Brokk Grungsson, Lord-Magnate of Barak-Nar",
@@ -31,7 +34,8 @@ const heroes = [
         points: 290,
         regiment_options: "0-1 Guild Officer, Any Kharadron Overlords",
         base_size: "50mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/dwarves/brokkGrungsson.jpg"
     },
     {
         name: "Codewright",
@@ -40,7 +44,8 @@ const heroes = [
         regiment_options: "0-1 Skyvessel, Any Infantry",
         notes: "This Hero can join an eligible regiment as a Guild Officer",
         base_size: "32mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/dwarves/codewright.jpg"
     },
     {
         name: "Drekki Flynt",
@@ -48,7 +53,8 @@ const heroes = [
         points: 180,
         regiment_options: "0-1 Guild Officer, 0-1 Arkanaut Frigate, Any Infantry",
         base_size: "32mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/dwarves/drekkiFlynt.jpg"
     },
     {
         name: "Endrinmaster with Dirigible Suit",
@@ -57,7 +63,8 @@ const heroes = [
         regiment_options: "0-1 Skyvessel, Any Infantry",
         notes: "This Hero can join an eligible regiment as a Guild Officer",
         base_size: "40mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/dwarves/endrinmasterWithDirigibleSuit.jpg"
     },
     {
         name: "Endrinmaster with Endrinharness",
@@ -66,7 +73,8 @@ const heroes = [
         regiment_options: "0-1 Skyvessel, Any Infantry",
         notes: "This Hero can join an eligible regiment as a Guild Officer",
         base_size: "32mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/dwarves/endrinmaster.jpg"
     }
 ];
 
@@ -77,7 +85,8 @@ const units = [
         points: 110,
         relevant_keywords: "Duardin, Infantry",
         base_size: "25mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/dwarves/arkanautCompany.jpg"
     },
     {
         name: "Arkanaut Frigate",
@@ -85,7 +94,8 @@ const units = [
         points: 320,
         relevant_keywords: "Duardin, Skyvessel, War Machine",
         base_size: "120 × 92mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/dwarves/arkanautFrigate.jpg"
     },
     {
         name: "Arkanaut Ironclad",
@@ -93,7 +103,8 @@ const units = [
         points: 500,
         relevant_keywords: "Duardin, Skyvessel, War Machine",
         base_size: "170 × 105mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/dwarves/arkanautlronclad.jpg"
     },
     {
         name: "Endrinriggers",
@@ -101,7 +112,8 @@ const units = [
         points: 130,
         relevant_keywords: "Duardin, Infantry",
         base_size: "32mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/dwarves/endrinriggers.jpg"
     },
     {
         name: "Grundstok Gunhauler",
@@ -109,7 +121,8 @@ const units = [
         points: 200,
         relevant_keywords: "Duardin, Skyvessel, War Machine",
         base_size: "105 × 70mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/dwarves/grundstokGunhauler.jpg"
     },
     {
         name: "Grundstok Thunderers",
@@ -117,7 +130,8 @@ const units = [
         points: 140,
         relevant_keywords: "Duardin, Infantry",
         base_size: "32mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/dwarves/grundstokThunderers.jpg"
     },
     {
         name: "Skywardens",
@@ -125,7 +139,8 @@ const units = [
         points: 150,
         relevant_keywords: "Duardin, Infantry",
         base_size: "32mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/dwarves/skywardens.jpg"
     }
 ];
 
