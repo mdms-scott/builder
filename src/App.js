@@ -67,10 +67,9 @@ const App = () => {
 
   const handleRemoveUnit = (index) => {
     const removedUnit = [...selectedUnits[selectedFaction]];
-    removedUnit.splice(index, 1);
+    const removedUnitData = removedUnit.splice(index, 1)[0];
     setSelectedUnits({ ...selectedUnits, [selectedFaction]: removedUnit });
     
-    const removedUnitData = selectedUnits[selectedFaction][index];
     setTotalPoints({ ...totalPoints, [selectedFaction]: totalPoints[selectedFaction] - removedUnitData.points });
     setModelCount({ ...modelCount, [selectedFaction]: modelCount[selectedFaction] - removedUnitData.unit_size });
   };
@@ -78,30 +77,38 @@ const App = () => {
   const handleReinforceUnit = (index) => {
     const reinforcedUnit = { ...currentSelectedUnits[index] };
     if (!reinforcedUnit.reinforced) {
+      const updatedPoints = currentTotalPoints + reinforcedUnit.points;
+      const updatedModelCount = currentModelCount + reinforcedUnit.unit_size;
+
       reinforcedUnit.points *= 2;
       reinforcedUnit.unit_size *= 2;
       reinforcedUnit.reinforced = true;
+
       const updatedUnits = [...currentSelectedUnits];
       updatedUnits[index] = reinforcedUnit;
+
       setSelectedUnits({ ...selectedUnits, [selectedFaction]: updatedUnits });
-  
-      setTotalPoints({ ...totalPoints, [selectedFaction]: currentTotalPoints + reinforcedUnit.points });
-      setModelCount({ ...modelCount, [selectedFaction]: currentModelCount + reinforcedUnit.unit_size });
+      setTotalPoints({ ...totalPoints, [selectedFaction]: updatedPoints });
+      setModelCount({ ...modelCount, [selectedFaction]: updatedModelCount });
     }
   };
 
   const handleUnreinforceUnit = (index) => {
     const unreinforcedUnit = { ...currentSelectedUnits[index] };
     if (unreinforcedUnit.reinforced) {
+      const updatedPoints = currentTotalPoints - unreinforcedUnit.points / 2;
+      const updatedModelCount = currentModelCount - unreinforcedUnit.unit_size / 2;
+
       unreinforcedUnit.points /= 2;
       unreinforcedUnit.unit_size /= 2;
       unreinforcedUnit.reinforced = false;
+
       const updatedUnits = [...currentSelectedUnits];
       updatedUnits[index] = unreinforcedUnit;
+
       setSelectedUnits({ ...selectedUnits, [selectedFaction]: updatedUnits });
-  
-      setTotalPoints({ ...totalPoints, [selectedFaction]: currentTotalPoints - unreinforcedUnit.points });
-      setModelCount({ ...modelCount, [selectedFaction]: currentModelCount - unreinforcedUnit.unit_size });
+      setTotalPoints({ ...totalPoints, [selectedFaction]: updatedPoints });
+      setModelCount({ ...modelCount, [selectedFaction]: updatedModelCount });
     }
   };
 
