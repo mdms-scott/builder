@@ -75,6 +75,36 @@ const App = () => {
     setModelCount({ ...modelCount, [selectedFaction]: modelCount[selectedFaction] - removedUnitData.unit_size });
   };
 
+  const handleReinforceUnit = (index) => {
+    const reinforcedUnit = { ...currentSelectedUnits[index] };
+    if (!reinforcedUnit.reinforced) {
+      reinforcedUnit.points *= 2;
+      reinforcedUnit.unit_size *= 2;
+      reinforcedUnit.reinforced = true;
+      const updatedUnits = [...currentSelectedUnits];
+      updatedUnits[index] = reinforcedUnit;
+      setSelectedUnits({ ...selectedUnits, [selectedFaction]: updatedUnits });
+  
+      setTotalPoints({ ...totalPoints, [selectedFaction]: currentTotalPoints + reinforcedUnit.points });
+      setModelCount({ ...modelCount, [selectedFaction]: currentModelCount + reinforcedUnit.unit_size });
+    }
+  };
+
+  const handleUnreinforceUnit = (index) => {
+    const unreinforcedUnit = { ...currentSelectedUnits[index] };
+    if (unreinforcedUnit.reinforced) {
+      unreinforcedUnit.points /= 2;
+      unreinforcedUnit.unit_size /= 2;
+      unreinforcedUnit.reinforced = false;
+      const updatedUnits = [...currentSelectedUnits];
+      updatedUnits[index] = unreinforcedUnit;
+      setSelectedUnits({ ...selectedUnits, [selectedFaction]: updatedUnits });
+  
+      setTotalPoints({ ...totalPoints, [selectedFaction]: currentTotalPoints - unreinforcedUnit.points });
+      setModelCount({ ...modelCount, [selectedFaction]: currentModelCount - unreinforcedUnit.unit_size });
+    }
+  };
+
   const handleDragEnd = (result) => {
     if (!result.destination) return;
     const reorderedUnits = Array.from(currentSelectedUnits);
@@ -155,6 +185,21 @@ const App = () => {
                             className={unit.type}
                           >
                             <p>{unit.name} - {unit.points} pts</p>
+                            {unit.type === 'unit' &&
+                              unit.unit_size > 1 &&
+                              (!unit.notes || !unit.notes.includes('This unit cannot be reinforced')) ? (
+                                <button
+                                  onClick={() => {
+                                    if (unit.reinforced) {
+                                      handleUnreinforceUnit(index);
+                                    } else {
+                                      handleReinforceUnit(index);
+                                    }
+                                  }}
+                                >
+                                  {unit.reinforced ? 'Un-reinforce' : 'Reinforce'}
+                                </button>
+                              ) : null}
                             <button onClick={() => handleRemoveUnit(index)}>Remove</button>
                           </div>
                         )}
