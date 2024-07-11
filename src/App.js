@@ -159,6 +159,7 @@ const App = () => {
                 {displayUnit.relevant_keywords && <p>Relevant Keywords: {displayUnit.relevant_keywords}</p>}
                 {displayUnit.notes && <p>Notes: {displayUnit.notes}</p>}
                 <p>Base Size: {displayUnit.base_size}</p>
+                <img src={process.env.PUBLIC_URL + displayUnit.image}></img>
               </div>
             ) : (
               <p>Select a unit to see its information</p>

@@ -5,7 +5,8 @@ const heroes = [
         points: 190,
         regiment_options: "0-1 Flesh-eater Noble, Any Flesh-eater Courts",
         base_size: "40mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/abhorrantArchregent.jpg"
     },
     {
         name: "Abhorrant Cardinal",
@@ -13,7 +14,8 @@ const heroes = [
         points: 110,
         regiment_options: "0-1 Flesh-eater Noble, 0-1 Knights, Any Serfs",
         base_size: "32mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/abhorrantCardinal.jpg"
     },
     {
         name: "Abhorrant Ghoul King",
@@ -21,7 +23,8 @@ const heroes = [
         points: 140,
         regiment_options: "0-1 Flesh-eater Noble, Any Flesh-eater Courts",
         base_size: "32mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/abhorrantGhoulKing.jpg"
     },
     {
         name: "Abhorrant Ghoul King on Royal Terrorgheist",
@@ -29,7 +32,8 @@ const heroes = [
         points: 380,
         regiment_options: "0-1 Flesh-eater Noble, Any Flesh-eater Courts",
         base_size: "130mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/abhorrantGhoulKingOnRoyalTerrorgheist.jpg"
     },
     {
         name: "Abhorrant Ghoul King on Royal Zombie Dragon",
@@ -37,7 +41,8 @@ const heroes = [
         points: 380,
         regiment_options: "0-1 Flesh-eater Noble, Any Flesh-eater Courts",
         base_size: "130mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/abhorrantGhoulKingOnRoyalZombieDragon.jpg"
     },
     {
         name: "Abhorrant Gorewarden",
@@ -45,7 +50,8 @@ const heroes = [
         points: 160,
         regiment_options: "0-1 Flesh-eater Noble, 0-1 Serfs, Any Knights",
         base_size: "40mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/abhorrantGorewarden.jpg"
     },
     {
         name: "Crypt Haunter Courtier",
@@ -54,7 +60,8 @@ const heroes = [
         regiment_options: "0-1 Serfs, Any Crypt Horrors",
         notes: "This Hero can join an eligible regiment as a Flesh-eater Noble",
         base_size: "50mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/cryptHaunterCourtier.jpg"
     },
     {
         name: "Crypt Infernal Courtier",
@@ -63,7 +70,8 @@ const heroes = [
         regiment_options: "0-1 Serfs, Any Crypt Flayers",
         notes: "This Hero can join an eligible regiment as a Flesh-eater Noble",
         base_size: "50mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/cryptInfernalCourtier.jpg"
     },
     {
         name: "Grand Justice Gormayne",
@@ -71,7 +79,8 @@ const heroes = [
         points: 120,
         regiment_options: "0-1 Knights, Any Serfs",
         base_size: "32mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/grandJusticeGormayne.jpg"
     },
     {
         name: "Marrowscroll Herald",
@@ -80,7 +89,8 @@ const heroes = [
         regiment_options: "Any Serfs",
         notes: "This Hero can join an eligible regiment as a Flesh-eater Noble",
         base_size: "32mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/marrowscrollHerald.jpg"
     },
     {
         name: "Nagash, Supreme Lord of the Undead",
@@ -88,7 +98,8 @@ const heroes = [
         points: 880,
         regiment_options: "0-1 Flesh-eater Noble, Any Flesh-eater Courts",
         base_size: "130mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/nagashSupremeLordOfTheUndead.jpg"
     },
     {
         name: "Royal Decapitator",
@@ -97,7 +108,8 @@ const heroes = [
         regiment_options: "Any Serfs",
         notes: "This Hero can join an eligible regiment as a Flesh-eater Noble",
         base_size: "32mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/royalDecapitator.jpg"
     },
     {
         name: "Ushoran, Mortarch of Delusion",
@@ -105,7 +117,8 @@ const heroes = [
         points: 470,
         regiment_options: "0-1 Flesh-eater Noble, Any Flesh-eater Courts",
         base_size: "130mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/ushoranMortarchOfDelusion.jpg"
     },
     {
         name: "Varghulf Courtier",
@@ -114,7 +127,8 @@ const heroes = [
         regiment_options: "Any Knights, Any Serfs",
         notes: "This Hero can join an eligible regiment as a Flesh-eater Noble",
         base_size: "90 × 52mm",
-        type: "hero"
+        type: "hero",
+        image: "/factions/flesheaters/varghulfCourtier.jpg"
     }
 ];
 
@@ -125,7 +139,8 @@ const units = [
         points: 170,
         relevant_keywords: "Knights, Infantry",
         base_size: "50mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/flesheaters/cryptFlayers.jpg"
     },
     {
         name: "Crypt Flayers (2 models)",
@@ -134,7 +149,8 @@ const units = [
         relevant_keywords: "Knights, Infantry",
         notes: "You can include 1 unit of this type for each Crypt Infernal Courtier in your army. This unit cannot be reinforced.",
         base_size: "50mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/flesheaters/cryptFlayers.jpg"
     },
     {
         name: "Crypt Ghouls",
@@ -142,7 +158,8 @@ const units = [
         points: 170,
         relevant_keywords: "Serfs, Infantry",
         base_size: "25mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/flesheaters/cryptGhouls.jpg"
     },
     {
         name: "Crypt Horrors",
@@ -150,7 +167,8 @@ const units = [
         points: 150,
         relevant_keywords: "Knights, Infantry",
         base_size: "50mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/flesheaters/cryptHorrors.jpg"
     },
     {
         name: "Crypt Horrors (2 models)",
@@ -159,7 +177,8 @@ const units = [
         relevant_keywords: "Knights, Infantry",
         notes: "You can include 1 unit of this type for each Crypt Haunter Courtier in your army. This unit cannot be reinforced.",
         base_size: "50mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/flesheaters/cryptHorrors.jpg"
     },
     {
         name: "Cryptguard",
@@ -167,7 +186,8 @@ const units = [
         points: 120,
         relevant_keywords: "Serfs, Infantry",
         base_size: "25mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/flesheaters/cryptguard.jpg"
     },
     {
         name: "Morbheg Knights",
@@ -175,7 +195,8 @@ const units = [
         points: 170,
         relevant_keywords: "Knights, Cavalry",
         base_size: "75 × 42mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/flesheaters/morbhegKnights.jpg"
     },
     {
         name: "Royal Beastflayers",
@@ -184,7 +205,8 @@ const units = [
         relevant_keywords: "Serfs, Infantry",
         notes: "This unit cannot be reinforced.",
         base_size: "40mm [2], 32mm [2], 28.5mm [3], 25mm [3]",
-        type: "unit"
+        type: "unit",
+        image: "/factions/flesheaters/cryptFlayers.jpg"
     },
     {
         name: "Royal Terrorgheist",
@@ -192,7 +214,8 @@ const units = [
         points: 280,
         relevant_keywords: "Monster",
         base_size: "130mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/flesheaters/royalTerrorgheist.jpg"
     },
     {
         name: "Royal Zombie Dragon",
@@ -200,7 +223,8 @@ const units = [
         points: 290,
         relevant_keywords: "Monster",
         base_size: "130mm",
-        type: "unit"
+        type: "unit",
+        image: "/factions/flesheaters/royalZombieDragon.jpg"
     }
 ];
 
