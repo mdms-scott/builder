@@ -1,0 +1,46 @@
+/* src/App.css */
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 80vh; /* Set a fixed height for the container */
+}
+
+.column {
+  flex: 1;
+  margin: 0 10px;
+  border: 1px solid #ddd;
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px;
+}
+
+.unit {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.unit-info {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.unit-list {
+  border: 1px solid #ddd;
+  padding: 10px;
+  min-height: 200px;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
