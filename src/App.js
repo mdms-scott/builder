@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './App.css';
@@ -21,16 +21,36 @@ const factions = {
   Kruleboyz: kruleboyz,
   Nurgle: nurgle,
   Tzeentch: tzeentch,
-  dwarves: dwarves,
-  lizards: lizards,
+  Dwarves: dwarves,
+  Lizards: lizards,
 };
 
 const App = () => {
-  const [selectedFaction, setSelectedFaction] = useState('Gloomspite');
-  const [selectedUnits, setSelectedUnits] = useState({});
-  const [totalPoints, setTotalPoints] = useState({});
-  const [modelCount, setModelCount] = useState({});
+  const [selectedFaction, setSelectedFaction] = useState(
+    localStorage.getItem('selectedFaction') || 'Gloomspite'
+  );
+  const [selectedUnits, setSelectedUnits] = useState(
+    JSON.parse(localStorage.getItem('selectedUnits')) || {}
+  );
+  const [totalPoints, setTotalPoints] = useState(
+    JSON.parse(localStorage.getItem('totalPoints')) || {}
+  );
+  const [modelCount, setModelCount] = useState(
+    JSON.parse(localStorage.getItem('modelCount')) || {}
+  );
   const [displayUnit, setDisplayUnit] = useState(null);
+
+  // Save selected faction to localStorage
+  useEffect(() => {
+    localStorage.setItem('selectedFaction', selectedFaction);
+  }, [selectedFaction]);
+
+  // Save selected units, total points, and model count to localStorage
+  useEffect(() => {
+    localStorage.setItem('selectedUnits', JSON.stringify(selectedUnits));
+    localStorage.setItem('totalPoints', JSON.stringify(totalPoints));
+    localStorage.setItem('modelCount', JSON.stringify(modelCount));
+  }, [selectedUnits, totalPoints, modelCount]);
 
   const currentFaction = factions[selectedFaction];
   const currentSelectedUnits = selectedUnits[selectedFaction] || [];
@@ -39,17 +59,20 @@ const App = () => {
 
   const handleAddUnit = (unit, event) => {
     event.stopPropagation();
-    const newSelectedUnits = [...currentSelectedUnits, unit];
+    const newSelectedUnits = [...(selectedUnits[selectedFaction] || []), unit];
     setSelectedUnits({ ...selectedUnits, [selectedFaction]: newSelectedUnits });
-    setTotalPoints({ ...totalPoints, [selectedFaction]: currentTotalPoints + unit.points });
-    setModelCount({ ...modelCount, [selectedFaction]: currentModelCount + unit.unit_size });
+    setTotalPoints({ ...totalPoints, [selectedFaction]: (totalPoints[selectedFaction] || 0) + unit.points });
+    setModelCount({ ...modelCount, [selectedFaction]: (modelCount[selectedFaction] || 0) + unit.unit_size });
   };
 
   const handleRemoveUnit = (index) => {
-    const removedUnit = currentSelectedUnits.splice(index, 1);
-    setSelectedUnits({ ...selectedUnits, [selectedFaction]: [...currentSelectedUnits] });
-    setTotalPoints({ ...totalPoints, [selectedFaction]: currentTotalPoints - removedUnit[0].points });
-    setModelCount({ ...modelCount, [selectedFaction]: currentModelCount - removedUnit[0].unit_size });
+    const removedUnit = [...selectedUnits[selectedFaction]];
+    removedUnit.splice(index, 1);
+    setSelectedUnits({ ...selectedUnits, [selectedFaction]: removedUnit });
+    
+    const removedUnitData = selectedUnits[selectedFaction][index];
+    setTotalPoints({ ...totalPoints, [selectedFaction]: totalPoints[selectedFaction] - removedUnitData.points });
+    setModelCount({ ...modelCount, [selectedFaction]: modelCount[selectedFaction] - removedUnitData.unit_size });
   };
 
   const handleDragEnd = (result) => {
