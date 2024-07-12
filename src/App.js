@@ -7,13 +7,13 @@ import './chota.css';
 
 // Import faction data
 import * as gloomspite from './factions/gloomspite';
-// Add imports for other factions
 import * as flesheaters from './factions/flesheaters'; 
 import * as kruleboyz from './factions/kruleboyz';
 import * as nurgle from './factions/nurgle';
 import * as tzeentch from './factions/tzeentch';
 import * as dwarves from './factions/dwarves';
 import * as lizards from './factions/lizards';
+import * as trees from './factions/trees';
 
 const factions = {
   Gloomspite: gloomspite,
@@ -23,6 +23,7 @@ const factions = {
   Tzeentch: tzeentch,
   Dwarves: dwarves,
   Lizards: lizards,
+  Trees: trees,
 };
 
 const App = () => {
